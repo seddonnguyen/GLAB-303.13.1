@@ -11,12 +11,12 @@ public class myRunnerNIO {
             var readBuffer = ByteBuffer.allocate(1024);
             var sb = new StringBuilder();
 
+            readBuffer.clear();
             while (fileChannel.read(readBuffer) > 0) {
                 readBuffer.flip();
                 while (readBuffer.hasRemaining()) {
                     sb.append((char) readBuffer.get());
                 }
-                readBuffer.clear();
             }
 
             var lines = sb.toString().split("\n");
