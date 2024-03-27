@@ -11,6 +11,7 @@ public class myRunnerNIO {
             var readBuffer = ByteBuffer.allocate(1024);
             var sb = new StringBuilder();
 
+            readBuffer.clear();
             while (fileChannel.read(readBuffer) > 0) {
                 readBuffer.flip();
                 while (readBuffer.hasRemaining()) {
