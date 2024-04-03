@@ -17,6 +17,7 @@ public class myRunnerNIO {
                 while (readBuffer.hasRemaining()) {
                     sb.append((char) readBuffer.get());
                 }
+                readBuffer.clear();
             }
 
             var lines = sb.toString().split("\n");
