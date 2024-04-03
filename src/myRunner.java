@@ -1,11 +1,11 @@
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class myRunner {
     public static void main(String[] args) throws IOException {
-        try (var bufferedReader = Files.newBufferedReader(Path.of("CourseData.csv"))) {
+        try (var bufferedReader = Files.newBufferedReader(Paths.get("CourseData.csv"))) {
             var courses = new ArrayList<course>();
 
             while (bufferedReader.ready()) {
